@@ -20,7 +20,7 @@ class Navbar extends React.Component {
     return (
       <div className="Navbar">
         <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-          <a className="navbar-brand" href="#">Sports Roster</a>
+          <h2 className="navbar-brand">Sports Roster</h2>
           <button className="navbar-toggler" type="button">
             <span className="navbar-toggler-icon"></span>
           </button>
