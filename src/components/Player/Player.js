@@ -3,10 +3,19 @@ import PropTypes from 'prop-types';
 
 import './Player.scss';
 
+import playerShapePropz from '../../helpers/propz/playerShape';
+
 class Player extends React.Component {
   static propTypes = {
     player: playerShapePropz.playerShape,
+    removePlayer: PropTypes.func.isRequired,
   }
+
+  deletePlayerEvent = (e) => {
+    e.preventDefault();
+    const { player, removePlayer } = this.props; 
+    removePlayer(player.id);
+};
 
   render() {
     const { player } = this.props;
@@ -18,6 +27,7 @@ class Player extends React.Component {
           <div className="card-body">
             <h5 className="card-title">{player.name}</h5>
             <p className="card-text">{player.position}</p>
+            <button className="btn btn-dark" onClick={this.deletePlayerEvent}>Delete</button>
           </div>
         </div>
       </div>
