@@ -4,7 +4,7 @@ import 'firebase/auth';
 import fbConnection from '../helpers/data/connection';
 
 import Auth from '../components/Auth/Auth';
-import TeamContainer from '../components/TeamContainer/TeamContainer';
+import Team from '../components/Team/Team';
 import NavBar from '../components/Navbar/Navbar';
 
 import './App.scss';
@@ -35,7 +35,7 @@ class App extends React.Component {
     const loadComponent = () => {
       let componentToLoad = '';
       if (authed) {
-        componentToLoad = <TeamContainer />;
+        componentToLoad = <Team />;
       } else {
         componentToLoad = <Auth />;
       }
