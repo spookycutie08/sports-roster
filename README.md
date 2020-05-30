@@ -6,7 +6,7 @@ HTML5, SCSS/CSS, React, Firebase
 ### Description:
 NSS homework project which introduces React and JSX, and how to perform full CRUD on React components.
 
-“Design single-page web app to manage the roster of a sports team of your choice.”
+“Design single-page web app to manage the roster of a sports team.”
 
 #### Exercise Requirements
 - User Authentication with Google login via Firebase
