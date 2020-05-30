@@ -1,3 +1,10 @@
 .Player {
   display: block;
+  margin-top: 15px;
+  .card {
+    border: solid 3px navy;
+  }
+  .blue-button {
+    margin-right: 5px;
+  }
 }

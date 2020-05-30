@@ -64,9 +64,9 @@ class Team extends React.Component {
 
     return (
       <div className="TeamContainer">
-        <button className="btn btn-primary col-6" onClick={() => this.setState({ formOpen: true })}><i className="fas fa-plus-circle"></i> Add New Player</button>
+        <button className="btn blue-button col-4" onClick={() => this.setState({ formOpen: true })}><i className="fas fa-plus-circle"></i> Add New Player</button>
         { formOpen ? <PlayerForm addPlayer={this.addPlayer} player={editedPlayer} putPlayer={this.putPlayer}/> : ''}
-        <div className="d-flex row-wrap">
+        <div className="Team Container d-flex row wrap">
           {makePlayers}
         </div>
       </div>

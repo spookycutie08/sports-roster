@@ -19,17 +19,17 @@ class Navbar extends React.Component {
     const { authed } = this.props;
     return (
       <div className="Navbar">
-        <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-          <h2 className="navbar-brand">Sports Roster</h2>
-          <button className="navbar-toggler" type="button">
+        <nav className="navbar navbar-expand-sm navbar-light">
+          <img src="https://clipart.info/images/minicovers/1526525408Nashville-Predators-Logo-Png-NHL.png"/>
+          <h2 className="navbar-brand text-white">Nashville Predators</h2>
+          <button className="navbar-toggler text-white" type="button">
             <span className="navbar-toggler-icon"></span>
           </button>
-
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 {
-                  authed ? <button className="nav-link btn btn-light" onClick={this.logMeOut}>Logout</button>
+                  authed ? <button className="nav-link btn btn-light text-dark" onClick={this.logMeOut}>Logout</button>
                     : ''
                 }
               </li>
