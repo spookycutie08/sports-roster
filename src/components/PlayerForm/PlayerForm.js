@@ -8,6 +8,14 @@ class PlayerForm extends React.Component {
     playerName: '',
     playerPosition: '',
     playerImageUrl: '',
+    isEditing: false,
+  }
+
+  componentDidMount() {
+    const { player } = this.props;
+    if (player.name) {
+      this.setState({ playerName: player.name, playerPosition: player.position, playerImageUrl: player.imageUrl, isEditing: true})
+    };
   }
 
   nameChange = (e) => {
