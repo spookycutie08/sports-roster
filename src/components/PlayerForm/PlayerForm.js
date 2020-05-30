@@ -33,7 +33,7 @@ class PlayerForm extends React.Component {
     this.setState({ playerImageUrl: e.target.value });
   };
 
-  savePlayer = (e) => {
+  savePlayerEvent = (e) => {
     e.preventDefault();
     const { playerName, playerPosition, playerImageUrl } = this.state;
     const { addPlayer } = this.props;
@@ -46,20 +46,21 @@ class PlayerForm extends React.Component {
     addPlayer(newPlayer);
   };
 
-  updatePlayer = (e) => {
+  updatePlayerEvent = (e) => {
     e.preventDefault();
     const { playerName, playerPosition, playerImageUrl } = this.state;
+    const { putPlayer, player } = this.props;
     const updatedPlayer = {
       name: playerName,
       position: playerPosition,
       imageUrl: playerImageUrl,
       uid: authData.getUid(),
     }
-    // updatePlayer(updatedPlayer);
+    putPlayer(player.id, updatedPlayer);
   };
 
   render() {
-    const { playerName, playerPosition, playerImageUrl } = this.state; 
+    const { playerName, playerPosition, playerImageUrl, isEditing } = this.state; 
     
     return (
       <div className="PlayerForm">
@@ -96,7 +97,11 @@ class PlayerForm extends React.Component {
               onChange={this.imageUrlChange}
             />
           </div>
-          <button className="btn btn-primary" onClick={this.savePlayer}>Save New Player</button>
+          {
+            isEditing
+            ? <button className="btn btn-primary" onClick={this.updatePlayerEvent}>Update Player</button>
+            : <button className="btn btn-primary" onClick={this.savePlayerEvent}>Save New Player</button>
+          }
         </form>
       </div>
     );
