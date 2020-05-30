@@ -15,7 +15,13 @@ class Player extends React.Component {
     e.preventDefault();
     const { player, removePlayer } = this.props; 
     removePlayer(player.id);
-};
+  };
+
+  editPlayerEvent = (e) => {
+    e.preventDefault();
+    const { player, editAPlayer } = this.props; 
+    editAPlayer(player);
+  };
 
   render() {
     const { player } = this.props;
@@ -27,6 +33,7 @@ class Player extends React.Component {
           <div className="card-body">
             <h5 className="card-title">{player.name}</h5>
             <p className="card-text">{player.position}</p>
+            <button className="btn btn-primary" onClick={this.editPlayerEvent}>Edit</button>
             <button className="btn btn-dark" onClick={this.deletePlayerEvent}>Delete</button>
           </div>
         </div>

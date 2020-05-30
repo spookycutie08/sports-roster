@@ -16,6 +16,7 @@ class Team extends React.Component {
 
   state = {
     players: [],
+    editedPlayer: {},
     formOpen: false,
   }
 
@@ -43,16 +44,28 @@ class Team extends React.Component {
       })
   };
 
+  putPlayer = (playerId, playerObject) => {
+    playersData.updatePlayer(playerId, playerObject)
+      .then(() => {
+        this.getInfo();
+        this.setState({ formOpen: false, editedPlayer: {} });
+      })
+  };
+
+  editAPlayer = (player) => {
+    this.setState({ formOpen: true, editedPlayer: player });
+  };
+
   render() {
-    const { players, formOpen } = this.state;
+    const { players, formOpen, editedPlayer } = this.state;
     const makePlayers = players.map((singlePlayer) => (
-      <Player key={singlePlayer.id} player={singlePlayer} removePlayer={this.removePlayer}/>
+      <Player key={singlePlayer.id} player={singlePlayer} removePlayer={this.removePlayer} editAPlayer={this.editAPlayer}/>
     ))
 
     return (
       <div className="TeamContainer">
         <button className="btn btn-primary col-6" onClick={() => this.setState({ formOpen: true })}><i className="fas fa-plus-circle"></i> Add New Player</button>
-        { formOpen ? <PlayerForm addPlayer={this.addPlayer}/> : ''}
+        { formOpen ? <PlayerForm addPlayer={this.addPlayer} player={editedPlayer} putPlayer={this.putPlayer}/> : ''}
         <div className="d-flex row-wrap">
           {makePlayers}
         </div>
