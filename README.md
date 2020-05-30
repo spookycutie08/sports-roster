@@ -24,4 +24,4 @@ NSS homework project which introduces React and JSX, and how to perform full CRU
 ![screenshot](screenshots/New_Player_Form.png)
 
 ### Deployed App:
-[Click here to view the deployed web app](https://sports-roster-1f515.firebaseapp.com/)
+[Click here to view the deployed web app (requires Google login)](https://sports-roster-1f515.firebaseapp.com/)
