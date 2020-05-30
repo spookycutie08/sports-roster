@@ -38,6 +38,18 @@ class PlayerForm extends React.Component {
     addPlayer(newPlayer);
   };
 
+  updatePlayer = (e) => {
+    e.preventDefault();
+    const { playerName, playerPosition, playerImageUrl } = this.state;
+    const updatedPlayer = {
+      name: playerName,
+      position: playerPosition,
+      imageUrl: playerImageUrl,
+      uid: authData.getUid(),
+    }
+    // updatePlayer(updatedPlayer);
+  };
+
   render() {
     const { playerName, playerPosition, playerImageUrl } = this.state; 
     
