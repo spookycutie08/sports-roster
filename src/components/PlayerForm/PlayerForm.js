@@ -82,7 +82,7 @@ class PlayerForm extends React.Component {
               type="text"
               className="form-control"
               id="player-position"
-              placeholder="C for Center, RW for Right Wing, etc..."
+              placeholder="Center, Right Wing, etc."
               value={playerPosition}
               onChange={this.positionChange}
             />
@@ -93,14 +93,15 @@ class PlayerForm extends React.Component {
               type="text"
               className="form-control"
               id="player-image-url"
+              placeholder="link to a nice headshot"
               value={playerImageUrl}
               onChange={this.imageUrlChange}
             />
           </div>
           {
             isEditing
-            ? <button className="btn btn-primary" onClick={this.updatePlayerEvent}>Update Player</button>
-            : <button className="btn btn-primary" onClick={this.savePlayerEvent}>Save New Player</button>
+            ? <button className="btn blue-button" onClick={this.updatePlayerEvent}><i class="fas fa-check-circle"></i> Update Player</button>
+            : <button className="btn blue-button" onClick={this.savePlayerEvent}><i class="fas fa-check-circle"></i> Save New Player</button>
           }
         </form>
       </div>

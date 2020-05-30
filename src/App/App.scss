@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.blue-button {
+    background-color: navy;
+    color: white;
+}
+
+.blue-button:hover {
+  color: gold;
+}

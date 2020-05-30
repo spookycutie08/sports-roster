@@ -33,8 +33,8 @@ class Player extends React.Component {
           <div className="card-body">
             <h5 className="card-title">{player.name}</h5>
             <p className="card-text">{player.position}</p>
-            <button className="btn btn-primary" onClick={this.editPlayerEvent}>Edit</button>
-            <button className="btn btn-dark" onClick={this.deletePlayerEvent}>Delete</button>
+            <button className="btn blue-button" onClick={this.editPlayerEvent}><i class="fas fa-edit"></i> Edit</button>
+            <button className="btn btn-dark" onClick={this.deletePlayerEvent}><i class="fas fa-trash-alt"></i> Delete</button>
           </div>
         </div>
       </div>
